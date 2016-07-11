@@ -1,0 +1,14 @@
+<div ng-controller="viewAllCtrl">
+	<div>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<span class="oneth"><b>Name</b></span><span class="twoeth"><b>OTP</b></span><span class="thirdeth"><b>Time</b></span>
+			</li>
+			<li class="list-group-item" ng-repeat="msg in msgArr" | trackBy $index | orderBy: '-msg.time'>
+				<span class="oneth">{{parent.customJSON[msg.userKey].name}}</span>
+				<span class="twoeth">{{msg.OTP}}</span>
+				<span class="thirdeth">{{msg.time | date:'medium'}}</span>
+			</li>
+		</ul>
+	</div>
+</div>

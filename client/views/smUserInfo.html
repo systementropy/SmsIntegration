@@ -1,0 +1,32 @@
+<div ng-controller="mainPageCtrl">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 pull-left">
+				<ul class="list-group">
+					<li class="list-group-item" 
+						ng-repeat="(key,value) in parent.customJSON"
+						ng-click="displayDetails(key)"
+						>{{value.FirstName}}</li>
+				</ul>
+			</div>
+			<div class="col-md-6 pull-left">
+				<ul class="list-group" ng-repeat="(key,value) in parent.selectedUser" ng-if="key!='History'">
+					<li class="list-group-item">
+						<div class="col-md-4">{{key}}</div>
+						<div class="col-md-8">{{value}}</div>
+						<div class="clear"></div>
+					</li>
+				</ul>
+				<div ng-repeat="(key,value) in parent.selectedUser" ng-if="key=='History'">
+					<a class="btn btn-block btn-primary" href="/compose?user={{parent.userKey}}">Send message</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="row">
+			<a class="btn btn-lg">
+				<h2><a href="/viewAll">View message history</h2>
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<div ng-controller="composeController">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="jumbotron">
+				<div class="sendMgsContainer">
+					<form class="col-md-6">
+						<h2>Send SMS to {{selectedUser.Mobile}}</h2>
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="parent.textBox" disabled>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-success btn-lg" ng-click="sendMsg()">Send SMS</button>
+						</div>
+					</form>
+					<div class="col-md-6">
+						<ul ng-if="selectedUser.History.length>0" class="list-group">
+							<li class="list-group-item">
+								<span><b>OTP</b></span><span><b>Time</b></span>
+							</li>
+							<li class="list-group-item" ng-repeat="msg in selectedUser.History" | orderBy: '-msg.time'>
+								<span>{{msg.OTP}}</span>
+								<span>{{msg.time | date:'medium'}}</span>
+							</li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
