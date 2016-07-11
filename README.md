@@ -1,7 +1,17 @@
 # sms-integration
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.7.6.
-
+## Purpose
+This project sends a randomly generated OTP to a client for verfication purposes.
+The messaging server used is twilio and the project itself is built using MEAN stack.
+There is alist of 8 users in a temprory JSON and messages stored are maintained inside them, so the sms list resets when refreshing the page.
+There are 3 pages currently:
+	1.Landing Page:	-shows list of all users
+					-on clicking any user details are shown
+	2.Send SMS Page	-Sends message with a randomly generated 6 digit OTP
+					-Shows list of sms sent by that user in descending order of time (newest first)
+	3.View All Page	-Shows all sms sent to all the users
+	
 ## Getting Started
 
 ### Prerequisites
@@ -30,3 +40,4 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
